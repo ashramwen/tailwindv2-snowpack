@@ -1,0 +1,13 @@
+{
+  "exclude": ["**/vendor/**/*"],
+  "mount": {
+    "dist": "/",
+    "src": "/"
+  },
+  "optimize": {
+    "bundle": true,
+    "minify": true,
+    "sourcemap": false,
+    "target": "es2018"
+  }
+}

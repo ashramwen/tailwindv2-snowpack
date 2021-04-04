@@ -1,0 +1,26 @@
+{
+  "name": "myapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "postcss:watch": "postcss src/vendor/tailwind.css -o src/assets/css/tailwind.css --env development -w",
+    "postcss:build": "postcss src/vendor/tailwind.css -o src/assets/css/tailwind.css --env production",
+    "clean": "rm -rf build .cache",
+    "dev:server": "snowpack dev",
+    "build:module": "snowpack build",
+    "start": "npm-run-all -s clean -p postcss:watch dev:server",
+    "build": "npm-run-all -s clean postcss:build build:module"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.2.5",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.9",
+    "postcss-cli": "^8.3.1",
+    "snowpack": "^3.2.2",
+    "tailwindcss": "^2.0.4"
+  }
+}
