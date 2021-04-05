@@ -4,13 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "postcss:watch": "postcss src/vendor/tailwind.css -o src/assets/css/tailwind.css --env development -w",
-    "postcss:build": "postcss src/vendor/tailwind.css -o src/assets/css/tailwind.css --env production",
-    "clean": "rm -rf build .cache",
-    "dev:server": "snowpack dev",
-    "build:module": "snowpack build",
-    "start": "npm-run-all -s clean -p postcss:watch dev:server",
-    "build": "npm-run-all -s clean postcss:build build:module"
+    "postcss:watch": "postcss vendor/tailwind.css -o src/assets/css/tailwind.css --env development -w",
+    "postcss:build": "postcss vendor/tailwind.css -o src/assets/css/tailwind.css --env production",
+    "snowpack:server": "snowpack dev",
+    "snowpack:build": "snowpack build",
+    "start": "npm-run-all -s -p postcss:watch snowpack:server",
+    "build": "npm-run-all -s postcss:build snowpack:build"
   },
   "keywords": [],
   "author": "",
