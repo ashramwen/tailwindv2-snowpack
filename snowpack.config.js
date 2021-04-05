@@ -7,6 +7,7 @@ module.exports = {
   },
   exclude: ['**/vendor/**/*'],
   mount: {
+    public: { url: '/', static: true },
     src: '/',
   },
   optimize: {
